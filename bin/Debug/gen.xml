@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Data>
+	<types>
+		<type name="ITEM">
+			<item name="id" type="uint32" multi="yes" des="ID"/>
+			<item name="name" type="string" des="名字"/>
+			<item name="grade" type="int" des="品质"/>
+			<item name="rate" type="float" des="概率"/>
+			<item name="del" type="bool" des="是否删除"/>
+		</type>
+		<type name="PACKAGE">
+			<item name="items" type="ITEM" multi="y" des="道具"/>
+		</type>
+		
+		<type name="ROLE">
+			<item name="id" type="int" des="ID"/>
+			<item name="name" type="string" des="名字"/>
+			<item name="level" type="int" des="等级"/>
+		</type>
+		<type name="USER">
+			<item name="role" type="ROLE" des="角色属性"/>
+			<item name="exp" type="uint64" des="经验"/>
+			<item name="gold" type="uint64" des="金币"/>
+			<item name="packs" type="PACKAGE" multi="1" des="背包"/>
+		</type>
+		<type name="ACCOUNT">
+			<item name="users" type="USER" multi="t" des="角色"/>
+		</type>
+	</types>
+	
+	<vars>
+		<var name="num" type="uint32" des="test"/>
+		<var name="item" type="ITEM" des="道具基础"/>
+		<var name="package" type="PACKAGE"/>
+		<var name="role" type="ROLE"/>
+		<var name="account" type="ACCOUNT"/>
+	</vars>
+</Data>
